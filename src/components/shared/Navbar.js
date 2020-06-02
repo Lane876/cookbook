@@ -20,7 +20,7 @@ function Logo() {
         <div className={classes.logoContainer}>
 
             <div className={classes.logoWrapper}>
-                <Button component={Link} to='/' variant='h4'>
+                <Button component={Link} to='/'>
                     njamnjam
                 </Button>
             </div>

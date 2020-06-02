@@ -293,4 +293,140 @@ export const useLoginPageStyles = makeStyles((theme) => ({
         height: 1,
         background: "#e6e6e6",
     },
+    signUpCard: {
+        maxWidth: 348,
+        padding: "16px 40px",
+        marginBottom: 10,
+        display: "grid",
+        alignItems: "center",
+        gridTemplateColumns: "2fr 1fr",
+    },
+    facebookIcon: {
+        height: 16,
+        width: 16,
+        marginRight: 8,
+    },
+}))
+
+export const useSignUpPageStyles = makeStyles({
+    section: {
+        display: "grid",
+        placeItems: "center",
+        height: "100vh",
+    },
+    card: {
+        maxWidth: 348,
+        padding: "16px 40px",
+        marginBottom: 10,
+    },
+    cardHeader: {
+        // backgroundImage: `url(${IconSheet})`,
+        // backgroundRepeat: "no-repeat",
+        // backgroundPosition: "-98px 0",
+        height: 51,
+        width: 175,
+        margin: "0 auto",
+    },
+    cardHeaderSubHeader: {
+        textAlign: "center",
+        fontWeight: "bold !important",
+        lineHeight: 1.2,
+        color: "#999",
+        margin: "0 0 20px",
+    },
+    orContainer: {
+        margin: "10px 0px",
+        display: "grid",
+        gridTemplateColumns: "1fr auto 1fr",
+        gridGap: 18,
+        placeItems: "center",
+    },
+    orLine: {
+        justifySelf: "stretch",
+        height: 1,
+        background: "#e6e6e6",
+    },
+    textField: {
+        marginBottom: 6,
+    },
+    loginCard: {
+        maxWidth: 348,
+        padding: "16px 40px",
+        marginBottom: 10,
+        display: "grid",
+        alignItems: "center",
+        gridTemplateColumns: "3fr 2fr",
+    },
+    loginButton: {
+        justifySelf: "start",
+    },
+})
+
+
+export const useFeedPageStyles = makeStyles((theme) => ({
+    container: {
+        display: 'grid',
+        gridTemplateColumns: 'minmax(auto, 600px) 300px',
+        gridGap: 35,
+        [theme.breakpoints.down("sm")]: {
+            gridTemplateColumns: "minmax(auto, 600px)",
+            justifyContent: "center",
+        },
+        "&.slickSlider": {
+            display: "grid",
+        },
+    },
+    sidebarContainer: {
+        display: "grid",
+        margin: "0px 28px 24px",
+        justifyContent: "center",
+        gridTemplateColumns: "minmax(auto, 300px)",
+    },
+    sidebarWrapper: { position: "fixed", width: 293 },
+
+
+}))
+
+
+export const useFeedPostStyles = makeStyles((theme) => ({
+    article: {
+        border: "1px solid #e6e6e6",
+        background: "#ffffff",
+        marginBottom: 60,
+        [theme.breakpoints.down("xs")]: {
+            border: "unset",
+            marginBottom: 0,
+        },
+    },
+    postHeader: {
+        borderBottom: "1px solid rgba(var(--ce3,239,239,239),1)",
+        display: "grid",
+        gridAutoFlow: "column",
+        gridTemplateColumns: "auto minmax(auto, 20px)",
+        gridGap: 10,
+        alignItems: "center",
+        padding: 16,
+    },
+    moreIcon: {
+        height: 24,
+        width: 18,
+        justifySelf: "center",
+        "&:hover": {
+            cursor: "pointer",
+        },
+    },
+    image: {
+        width: "100%",
+    },
+    postButtons: {
+        display: "grid",
+        gridAutoFlow: "column",
+        gridTemplateColumns: "24px 24px 24px minmax(24px, auto)",
+        gridGap: 16,
+        padding: "6px 0px !important",
+        // cursor: "pointer",
+    },
+    postButtonsWrapper: {
+        padding: "0px 16px 8px !important",
+    },
 }))
