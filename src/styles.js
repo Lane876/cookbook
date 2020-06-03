@@ -429,4 +429,41 @@ export const useFeedPostStyles = makeStyles((theme) => ({
     postButtonsWrapper: {
         padding: "0px 16px 8px !important",
     },
+    collapsed: {
+        display: "flex",
+        alignItems: "center",
+    },
+    expanded: {
+        display: "inline-block",
+    },
+    username: {
+        fontWeight: "600 !important",
+        marginRight: "5px !important",
+    },
+    captionWrapper: {
+        display: "flex",
+        alignItems: "center",
+        wordBreak: "break-all",
+    },
+    caption: {
+        fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", Helvetica, Arial, sans-serif`,
+        fontSize: "14px !important",
+    },
+    moreButton: {
+        color: "#999 !important",
+        padding: "0px !important",
+        "&:hover": {
+            background: "transparent !important",
+        },
+    },
+    commentsLink: {
+        color: "#999",
+        margin: "5px 0 !important",
+    },
+    commentUsername: {
+        fontWeight: "600 !important",
+    },
+    datePosted: {
+        fontSize: "10px !important",
+    },
 }))

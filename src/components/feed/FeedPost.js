@@ -3,12 +3,14 @@ import { useFeedPostStyles } from '../../styles'
 import UserCard from '../shared/UserCard'
 import { MoreIcon, CommentIcon, ShareIcon } from '../../icons'
 import { Link } from 'react-router-dom'
-import { Typography } from '@material-ui/core'
+import { Typography, Button } from '@material-ui/core'
+import HTMLEllipsis from "react-lines-ellipsis/lib/html";
 
 
 const FeedPost = ({ post }) => {
     const classes = useFeedPostStyles()
-    const { media, id } = post
+    const { media, id, likes, user, caption, comments } = post
+    const [showCaption, setCaption] = React.useState(false)
     return (
         <div>
             <article className={classes.article}>
@@ -29,7 +31,59 @@ const FeedPost = ({ post }) => {
                         <SaveButton />
                     </div>
                     <Typography className={classes.like}>
+                        <span>
+                            {likes === 1 ? '1 like' : `${likes} likes`}
+                        </span>
+                    </Typography>
+                    <div className={showCaption ? classes.expanded : classes.collapsed}>
+                        <Link to={`/${user.username}`}>
+                            <Typography variant='subtitle2' component='span' className={classes.username}>
+                                {user.username}
+                            </Typography>
+                        </Link>
+                        {showCaption ? (
+                            <Typography
+                                variant='body'
+                                component='span'
+                                dangerouslySetInnerHTML={{ __html: caption }}
 
+                            />
+                        ) : (
+                                <div className={classes.captionWrapper}>
+                                    <HTMLEllipsis
+                                        unsafeHTML={caption}
+                                        className={classes.caption}
+                                        maxLine='0'
+                                        ellipsis='...'
+                                        basedOn='letters'
+                                    />
+                                    <Button className={classes.moreButton} onClick={() => setCaption(true)}>
+                                        more
+                                </Button>
+                                </div>
+
+                            )
+                        }
+                    </div>
+                    <Link to={`/p/${id}`}>
+                        <Typography className={classes.commentsLink} variant='bosy2' component='div'>
+                            View all  {comments.length} comments
+                        </Typography>
+                    </Link>
+                    {comments.map(comment => (
+                        <div key={commnet.id}>
+                            <Link to={`/${comment.user.username}`}>
+                                <Typography variant='subtitle2' component='span' className={classes.commentUsername}>
+                                    {comment.user.username}
+                                </Typography>{" "}
+                                <Typography component='span' variant='body2'>
+                                    {commnet.content}
+                                </Typography>
+                            </Link>
+                        </div>
+                    ))}
+                    <Typography className={classes.datePosted} color='textSecondary'>
+                        5 DAYS AGO
                     </Typography>
                 </div>
             </article>
@@ -49,3 +103,5 @@ function SaveButton() {
 }
 
 export default FeedPost
+
+
