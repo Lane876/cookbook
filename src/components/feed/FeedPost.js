@@ -3,7 +3,7 @@ import { useFeedPostStyles } from '../../styles'
 import UserCard from '../shared/UserCard'
 import { MoreIcon, CommentIcon, ShareIcon } from '../../icons'
 import { Link } from 'react-router-dom'
-import { Typography, Button } from '@material-ui/core'
+import { Typography, Button, Divider, Hidden } from '@material-ui/core'
 import HTMLEllipsis from "react-lines-ellipsis/lib/html";
 
 
@@ -15,7 +15,7 @@ const FeedPost = ({ post }) => {
         <div>
             <article className={classes.article}>
                 <div className={classes.postHeader}>
-                    <UserCard />
+                    <UserCard user={user} />
                     <MoreIcon className={classes.moreIcon} />
                 </div>
                 <div>
@@ -36,8 +36,12 @@ const FeedPost = ({ post }) => {
                         </span>
                     </Typography>
                     <div className={showCaption ? classes.expanded : classes.collapsed}>
-                        <Link to={`/${user.username}`}>
-                            <Typography variant='subtitle2' component='span' className={classes.username}>
+                        <Link to={`/${user.username}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                            <Typography
+                                variant="subtitle2"
+                                component="span"
+                                className={classes.username}
+                            >
                                 {user.username}
                             </Typography>
                         </Link>
@@ -65,19 +69,19 @@ const FeedPost = ({ post }) => {
                             )
                         }
                     </div>
-                    <Link to={`/p/${id}`}>
+                    <Link to={`/p/${id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
                         <Typography className={classes.commentsLink} variant='bosy2' component='div'>
                             View all  {comments.length} comments
                         </Typography>
                     </Link>
                     {comments.map(comment => (
-                        <div key={commnet.id}>
+                        <div key={comment.id}>
                             <Link to={`/${comment.user.username}`}>
                                 <Typography variant='subtitle2' component='span' className={classes.commentUsername}>
                                     {comment.user.username}
                                 </Typography>{" "}
                                 <Typography component='span' variant='body2'>
-                                    {commnet.content}
+                                    {comment.content}
                                 </Typography>
                             </Link>
                         </div>
@@ -86,6 +90,10 @@ const FeedPost = ({ post }) => {
                         5 DAYS AGO
                     </Typography>
                 </div>
+                <Hidden xsDown>
+                    <Divider />
+                    <Comment />
+                </Hidden>
             </article>
 
         </div>
@@ -94,14 +102,30 @@ const FeedPost = ({ post }) => {
 
 
 function LikeButton() {
-
+    return (
+        <>
+            LikeButton
+        </>
+    )
 }
 
 
 function SaveButton() {
+    return (
+        <>
+            SaveButton
+        </>
+    )
+}
 
+
+function Comment() {
+    return (
+        <>
+            Comment
+        </>
+    )
 }
 
 export default FeedPost
-
 

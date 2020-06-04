@@ -467,3 +467,27 @@ export const useFeedPostStyles = makeStyles((theme) => ({
         fontSize: "10px !important",
     },
 }))
+
+
+export const useUserCardStyles = makeStyles({
+    wrapper: {
+        display: "grid",
+        gridAutoFlow: "column",
+        gridTemplateColumns: "min-content auto",
+        gridGap: 12,
+        alignItems: "center",
+        width: "100%",
+    },
+    avatar: {
+        width: ({ avatarSize = 44 }) => avatarSize,
+        height: ({ avatarSize = 44 }) => avatarSize,
+    },
+    nameWrapper: {
+        overflow: "hidden",
+        whiteSpace: "nowrap",
+    },
+    typography: {
+        textOverflow: "ellipsis",
+        overflow: "hidden",
+    },
+})

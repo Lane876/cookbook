@@ -35,7 +35,7 @@ export function getDefaultPost() {
   return {
     id: uuid(),
     likes: 10,
-    caption: `<span class="">Do you know the 10 JavaScript concepts you need to learn React? 🤔⚛️👇<br>•<br>•<br>👉 Get the FREE cheatsheet to learn them now: bit.ly/10-js-tips 🔥</span>`,
+    caption: `<span class="">Do you know the 10 JavaScript concepts you need to learn React? 🤔⚛️👇<br>•<br>•<br>👉 Get the FREE cheatsheet to learn them now 🔥</span>`,
     user: defaultUser,
     media:
       "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?cs=srgb&dl=apple-coffee-computer-desk-356056.jpg&fm=jpg",
