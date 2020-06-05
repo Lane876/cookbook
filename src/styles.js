@@ -466,6 +466,54 @@ export const useFeedPostStyles = makeStyles((theme) => ({
     datePosted: {
         fontSize: "10px !important",
     },
+    like: {
+        animation: "$like-button-animation 0.45s",
+        animationTimingFunction: "ease-in-out",
+        transform: "scale(1)",
+    },
+    liked: {
+        animation: "$liked-button-animation 0.45s",
+        animationTimingFunction: "ease-in-out",
+        transform: "scale(1)",
+    },
+    "@keyframes like-button-animation": {
+        "0%": { transform: "scale(1)" },
+        "25%": { transform: "scale(1.2)" },
+        "50%": { transform: "scale(0.95)" },
+        "100%": { transform: "scale(1)" },
+    },
+    "@keyframes liked-button-animation": {
+        "0%": { transform: "scale(1)" },
+        "25%": { transform: "scale(1.2)" },
+        "50%": { transform: "scale(0.95)" },
+        "100%": { transform: "scale(1)" },
+    },
+    saveIcon: {
+        justifySelf: "right",
+    },
+    commentContainer: {
+        display: "grid",
+        gridAutoFlow: "column",
+        gridTemplateColumns: "auto minmax(auto, 56px)",
+        padding: "0px 0px 0px 16px !important",
+    },
+    root: {
+        fontSize: "14px !important",
+    },
+    underline: {
+        "&::before": {
+            border: "none !important",
+        },
+        "&::after": {
+            border: "none !important",
+        },
+        "&:hover&:before": {
+            border: "none !important",
+        },
+    },
+    textField: {
+        padding: "10px 0px !important",
+    },
 }))
 
 
